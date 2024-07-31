@@ -8,7 +8,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - group: poc.polaris.synopsys.com
+  - group: polaris_var_group
 
 steps:
 - task: JavaToolInstaller@0
@@ -30,7 +30,7 @@ steps:
     BRIDGE_POLARIS_SERVERURL: $(POLARIS_SERVERURL)
     BRIDGE_POLARIS_ACCESSTOKEN: $(POLARIS_ACCESSTOKEN)
     BRIDGE_POLARIS_ASSESSMENT_TYPES: 'SAST,SCA'
-    BRIDGE_POLARIS_APPLICATION_NAME: chuckaude-$(Build.Repository.Name)
+    BRIDGE_POLARIS_APPLICATION_NAME: bravompPersonal
     BRIDGE_POLARIS_PROJECT_NAME: $(Build.Repository.Name)
     BRIDGE_POLARIS_BRANCH_NAME: $(Build.SourceBranchName)
     BRIDGE_POLARIS_REPORTS_SARIF_CREATE: true
@@ -42,7 +42,7 @@ steps:
     BRIDGE_POLARIS_SERVERURL: $(POLARIS_SERVERURL)
     BRIDGE_POLARIS_ACCESSTOKEN: $(POLARIS_ACCESSTOKEN)
     BRIDGE_POLARIS_ASSESSMENT_TYPES: 'SAST,SCA'
-    BRIDGE_POLARIS_APPLICATION_NAME: chuckaude-$(Build.Repository.Name)
+    BRIDGE_POLARIS_APPLICATION_NAME: bravompPersonal
     BRIDGE_POLARIS_PROJECT_NAME: $(Build.Repository.Name)
     BRIDGE_POLARIS_BRANCH_NAME: $(Build.SourceBranchName)
     BRIDGE_POLARIS_BRANCH_PARENT_NAME: $(System.PullRequest.targetBranchName)
